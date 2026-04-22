@@ -27,3 +27,12 @@ siga as intrucoes:
 1 - Use como base os arquivos enviados
 2 - Adicione a imagens na pagina inicial
 3 - corrija qualquer erro que tenha na imagem
+
+
+
+siga as intrucoes:
+
+1 - Use como base os arquivos da pasta site_clinica
+2 - Atualize o arquivo index, mantenha as informacoes basica sobre cada sessao do site, e a estrutura base, para que nao fique distinto do que foi padronizado
+3 - distribua melhor as imagens (elas estao centralizadas), uma imagem por sessao, ex: 'sobre a clinica' colocar uma imagem relacionada ao ambiente 
+4 - pode tirar o topico conheça nosso ambiente, pois a as imagens ja estarao disponiveis
