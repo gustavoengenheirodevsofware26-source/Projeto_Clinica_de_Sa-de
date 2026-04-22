@@ -1,0 +1,13 @@
+siga as instrucoes:
+
+1 - Crie um site de uma clinica terapeutica, na pasta site_clinica 
+2 - Separe os arquivos de acordo com as pastas, html, css, js e png
+3 - A princincio crie uma pagina inicial index.html com as seguntes infromacoes:
+  a - Nome da clinica terapeutica (seja criativo)
+  b - Crie uma breve descricao
+  c - Destaque os principais servicos prestados
+  d - Crie um botao para entrar em contado (whassapp)
+4 - O site tem que ser responsivo, para que funcione em todos tipos de tela
+5 - Crie somente a pagina inicial, com as informacoes do item 3
+6 - Apenas crie o botao para as seguintes paginas 'Sobre a clinica', 'Profissionais', 'Servicoes/Especialistas', 'Contato/Agendamento'. Nao crie nenhum html para essas paginas, apenas crie o botao para que futuramento possa ser 
+7 - Informacoes sobre as paginas a serem desenvolvidas no item 6 devem ser muito breves na pagina inicial, serao desenvolvidas futuramente em seus arquivos html futuramente
