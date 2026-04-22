@@ -25,4 +25,4 @@ siga as intrucoes:
 siga as intrucoes:
 
 1 - Use como base os arquivos da pasta site_clinica
-2 - Adicione a imagem 'site_clinica\png\foto-ampliar-espaco-terapeutico.png' na pagina inicial
+2 - Adicione a imagem 'site_clinica\png\ambiente_clinica_terapeutica_[01 a 04]' na pagina inicial
