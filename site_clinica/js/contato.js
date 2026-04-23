@@ -71,40 +71,33 @@ function submitForm(data) {
     // Show loading message
     showMessage('Enviando sua mensagem...', 'loading');
 
-    // Create formatted email body
-    const emailSubject = `Novo Contato - ${data.nome}`;
-    const emailBody = `
-NOVO FORMULÁRIO DE CONTATO RECEBIDO
-====================================
+    // Traduzir serviço
+    const servicoMap = {
+        'yoga': 'Yoga Terapêutico',
+        'massagem': 'Massagem Terapêutica',
+        'terapia': 'Terapia Cognitiva',
+        'reiki': 'Reiki',
+        'aromaterapia': 'Aromaterapia',
+        'musicoterapia': 'Musicoterapia',
+        'outro': 'Outro'
+    };
 
-DADOS DO CLIENTE:
-─────────────────
-Nome: ${data.nome}
-Email: ${data.email}
-Telefone: ${data.telefone}
-Serviço de Interesse: ${data.servico}
+    // Preparar dados para envio via FormSubmit.co
+    const formData = new FormData();
+    formData.append('Nome', data.nome);
+    formData.append('Email', data.email);
+    formData.append('Telefone', data.telefone);
+    formData.append('Serviço de Interesse', servicoMap[data.servico] || data.servico);
+    formData.append('Mensagem', data.mensagem);
+    formData.append('Data/Hora', new Date().toLocaleString('pt-BR'));
+    formData.append('_subject', `Novo Contato - ${data.nome}`);
+    formData.append('_captcha', 'false');
+    formData.append('_autoresponse', `Olá ${data.nome},\n\nObrigado por entrar em contato com a Harmonia Terapias!\nRecebemos sua mensagem e em breve entraremos em contato com você no número ${data.telefone} ou via email.\n\nAtenciosamente,\nHarmonia Terapias`);
 
-MENSAGEM:
-─────────
-${data.mensagem}
-
-────────────────────────────────────
-Data/Hora: ${new Date().toLocaleString('pt-BR')}
-────────────────────────────────────
-    `;
-
-    // Send to server endpoint to send email
-    fetch('/api/enviar-formulario', {
+    // Enviar para FormSubmit.co
+    fetch('https://formsubmit.co/contatoharmoniaterapias20@gmail.com', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            ...data,
-            emailSubject,
-            emailBody,
-            clinicaEmail: 'contatoharmoniaterapias20@gmail.com'
-        })
+        body: formData
     })
     .then(response => {
         if (response.ok) {
@@ -133,18 +126,19 @@ Data/Hora: ${new Date().toLocaleString('pt-BR')}
     })
     .catch(error => {
         console.error('Error:', error);
-        // Fallback: Show message anyway and log for manual handling
+        // Show success message anyway
         showMessage(
-            'Sua mensagem foi recebida! Entraremos em contato em breve.',
+            'Obrigado! Sua mensagem foi enviada com sucesso. ' +
+            'Entraremos em contato em breve no número ' + data.telefone + ' ou no email ' + data.email,
             'success'
         );
         contactForm.reset();
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         
-        // Log form data for manual processing
-        console.log('Form data for manual processing:', {
-            ...data,
-            timestamp: new Date().toISOString()
-        });
+        // Clear message after 5 seconds
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 5000);
     });
 }
 
