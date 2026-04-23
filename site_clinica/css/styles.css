@@ -328,7 +328,7 @@ body {
 
 .stat-item h3 {
     font-size: 2.5rem;
-    color: var(--secondary-color);
+    color: var(--light-text);
     margin-bottom: 0.5rem;
 }
 
