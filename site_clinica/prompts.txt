@@ -43,3 +43,14 @@ siga as intrucoes:
 
 1 - Use como base os arquivos da pasta site_clinica
 2 - Altere em todos (TODOS) html e css a cor principal do site para a paleta #A8C686 e #F2EFE7
+
+
+quero alterar uma area do meu site, para isso siga as intruções:
+
+1 - Use com base os arquivos da pasta site_clinica
+2 - analise o arquivo index.html
+3 - Observe a parte sobre Serviços e Especialistas
+4 - Gostaria de colocar 3 exemplos de serviços (baseando na pagina serviços.html), invez da imagem e descrição generica
+5 - crie apenas um botao para "Saiba mais", e exemplefique os serviços
+a - com a imagem
+b - uma breve descrição
